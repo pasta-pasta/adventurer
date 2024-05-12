@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: 'Keleti', sans-serif; /* Пример шрифта */
+    font-family: 'Fifaks', sans-serif; /* Пример шрифта */
     background-color: #101010;
 }
 
@@ -10,6 +10,11 @@ body, html {
 @font-face {
     font-family: 'Keleti';
     src: url('fonts/Keleti-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fifaks';
+    src: url('fonts/Fifaks10Dev1.ttf') format('truetype');
 }
 
 @keyframes gradient {
@@ -54,7 +59,7 @@ body, html {
     text-align: center; /* Выравнивание текста по центру */
     flex: 1;
     color: rgb(192, 192, 192); /* Цвет текста */
-    font-family: 'Keleti', sans-serif;
+    font-family: 'Fifaks', sans-serif;
     font-size: 58px;
 }
 
@@ -152,7 +157,7 @@ hr.animated-gradient {
 .content-text {
     flex: 1;
     color: rgb(192, 192, 192); /* Цвет текста */
-    font-family: 'Keleti', sans-serif;
+    font-family: 'Fifaks', sans-serif;
     font-size: 22px;
 }
 
