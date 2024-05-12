@@ -152,6 +152,8 @@ hr.animated-gradient {
     background: linear-gradient(90deg, #ff7e5f 0%, #cd0ff3 100%);
     background-size: 200% 200%; /* Увеличиваем размер фона для создания эффекта "перемещения" */
     animation: gradient 5s ease infinite; /* Анимация градиента */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .content-text {
@@ -159,5 +161,6 @@ hr.animated-gradient {
     color: rgb(192, 192, 192); /* Цвет текста */
     font-family: 'Fifaks', sans-serif;
     font-size: 22px;
+    margin-bottom: 8px;
 }
 
