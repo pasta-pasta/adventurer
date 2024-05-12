@@ -144,6 +144,30 @@ body, html {
     display: inline-block;
 }
 
+.life-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, lightgreen, green, darkgreen);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.death-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, black, darkgrey, grey);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+
+}
 
 
 hr.animated-gradient {
