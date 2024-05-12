@@ -1,0 +1,158 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Keleti', sans-serif; /* Пример шрифта */
+    background-color: #101010;
+}
+
+/* Кастомный шрифт и стили для текста */
+@font-face {
+    font-family: 'Keleti';
+    src: url('fonts/Keleti-Regular.ttf') format('truetype');
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.container {
+    width: 60%;
+    margin: auto;
+    background: #303030; /* Фон всей страницы */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Тень вокруг контейнера */
+}
+
+.content-block {
+    display: flex;
+    margin-bottom: 20px; /* Отступ между блоками */
+}
+
+.main-image {
+    width: 100%; /* Ширина изображения */
+    height: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.content-image {
+    width: 100px; /* Размер изображения */
+    height: auto;
+    margin-right: 20px; /* Отступ между текстом и картинкой */
+}
+
+.centered-text {
+    text-align: center; /* Выравнивание текста по центру */
+    flex: 1;
+    color: rgb(192, 192, 192); /* Цвет текста */
+    font-family: 'Keleti', sans-serif;
+    font-size: 58px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ff7e5f 0%, #cd0ff3 100%);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден только градиент */
+}
+
+.fire-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, red, orange, yellow);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.ice-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, cyan, lightblue, white);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.earth-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, brown, green, yellowgreen);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.magic-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, purple, violet, pink);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.electric-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, yellow, lime, aqua);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.celestial-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, lightcoral, peachpuff, lightyellow);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+
+hr.animated-gradient {
+    height: 4px; /* Устанавливаем высоту линии */
+    border: none; /* Убираем стандартные границы */
+    background: linear-gradient(90deg, #ff7e5f 0%, #cd0ff3 100%);
+    background-size: 200% 200%; /* Увеличиваем размер фона для создания эффекта "перемещения" */
+    animation: gradient 5s ease infinite; /* Анимация градиента */
+}
+
+.content-text {
+    flex: 1;
+    color: rgb(192, 192, 192); /* Цвет текста */
+    font-family: 'Keleti', sans-serif;
+    font-size: 22px;
+}
+
