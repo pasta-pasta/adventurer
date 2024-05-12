@@ -166,7 +166,18 @@ body, html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+}
 
+.golden-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, gold, goldenrod, darkgoldenrod);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 
