@@ -50,7 +50,7 @@
             и как бы быстро вы не совершали действия, у других существ <span class="electric-gradient-text">всегда</span>
             будет возможность ответить вам. Существа в мире <span class="fire-gradient-text">ToME</span> не тратят время
             на размышления и всегда выполняют действия по ходам. <span class="gradient-text">Приключенец</span>
-            всегда будет успевать за своим противником вне зависимости от его скорости -- но ходами ограничен и он сам,
+            всегда будет успевать за своим противником вне зависимости от его скорости - но ходами ограничен и он сам,
             что превращает сражение в полноценный стратегический бой.
         </div>
         <hr class="animated-gradient">
@@ -65,7 +65,7 @@
         <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Жизнь и нежизнь</div>
         <div class="content-text">
-            Все в мире <span class="fire-gradient-text">ToME</span> показатель <span class="life-gradient-text">жизни</span>. <span class="life-gradient-text">Жизнь</span> -
+            Все в мире <span class="fire-gradient-text">ToME</span> имеет показатель <span class="life-gradient-text">жизни</span>. <span class="life-gradient-text">Жизнь</span> -
             это мера того, насколько персонаж близок к смерти. В свою очередь, <span class="death-gradient-text">смерть</span> в мире <span class="fire-gradient-text">ToME</span>
             не является просто "прекращением жизненных функций" - она применима к любому объекту, который может быть уничтожен. В момент падения <span class="life-gradient-text">жизни</span>
             до нуля объект исчезает из реальности, оставляя после себя свое снаряжение. Големы, духи, автоматоны - в мире <span class="fire-gradient-text">ToME</span> они все
@@ -90,8 +90,10 @@
             3 очка <span class="magic-gradient-text"><a href="#stats">характеристик</a></span>, 1 очко <span class="magic-gradient-text">классовых</span> и 1 очко <span class="celestial-gradient-text">общих</span> способностей.
             Есть некоторые исключения (например, на 10 уровне даются 3 <span class="magic-gradient-text">классовых</span> очка), но они не важны. 
             <br><br>
-            <span class="gradient-text">Приключенец</span> имеет уровень, описываемый как <span class="golden-gradient-text">&infin;&lt;T...^</span>. Это число, называемое
-            <span class="golden-gradient-text">инфитеиплеоном</span>, означает, что уровень <span class="gradient-text">Приключенца</span> не ограничен, равно как и его <a href="#stats">характеристики</a> и способности.
+            <span class="gradient-text">Приключенец</span> благодаря программной ошибке имеет уровень, равный <span class="golden-gradient-text">#INF</span>. С точки зрения программного кода и системы
+            это бесконечность -- при любом сравнении уровень <span class="gradient-text">Приключенца</span> всегда будет выше. В языке это значение
+            напрямую репрезентируется через <span class="golden-gradient-text">math.huge</span>, что означает любое число больше стандартной битовой репрезентации чисел. 
+            Это означает, что уровень <span class="gradient-text">Приключенца</span> в рамках системы наивысший и не ограничен, равно как и его <span class="magic-gradient-text"><a href="#stats">характеристики</a></span> и способности.
         </div>
         <hr class="animated-gradient">
         <div class="content-text" id="stats" style="font-size: 32px;">Характеристики</div>
