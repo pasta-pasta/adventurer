@@ -240,7 +240,9 @@
             <span class="magic-gradient-text">Классовые</span> и <span class="celestial-gradient-text">общие</span> способности находятся внутри <span class="fire-gradient-text">категорий</span> способностей.
             Каждая <span class="fire-gradient-text">категория</span> имеет несколько способностей внутри себя, а способность имеет несколько прокачиваемых уровней. При этом категория также дает 1.3х множитель к уровню способностей -
             с возможность усиления. При этом уровень способностей не ограничен: указанные лимиты это лишь ограничения <span class="ice-gradient-text">очков</span>, которые можно вложить в способность. 
-            Сам уровень же может дополнительно усиляться от множителя категории и от <span class="magic-gradient-text">характеристик</span> персонажа.
+            Сам уровень же может дополнительно усиляться от множителя категории и от <span class="magic-gradient-text">характеристик</span> персонажа. Количественные параметры (диапазон, скорость распространения, мера влияния на мир и т.д.) способностей, 
+            у которых они не указаны явно, определяются соответствующими им характеристиками персонажа и следующими из них параметрами, а также уровнем способности. 
+            Также приведен фактор, от которого способность дополнительно усиливается. 
         </div>
         <div class="content-text">
             Как такого отличия между <span class="magic-gradient-text">классовыми</span> и <span class="celestial-gradient-text">общими</span> способностями нет - они просто находятся в разных категориях. 
@@ -248,7 +250,7 @@
         </div>
         <hr class="animated-gradient">
         <div class="content-text">
-            В случае <span class="gradient-text">Приключенца</span>, благодаря его уровню, у него изучены все доступные способности и категории на максимальный уровень. 
+            В случае <span class="gradient-text">Приключенца</span>, благодаря его уровню, у него изучены все доступные способности и категории на максимальный уровень.
         </div>
         <hr class="animated-gradient">
         <div class="content-text">
@@ -460,6 +462,146 @@
                 Выброс мистической энергии в ваши щиты, заряжая их и восстанвливая как на плоское значение, так и на процент от максимума. В случае с 
                 <span class="fire-gradient-text">Щитом помех</span> дополнительно переводит накопленную энергию в прочность щита (подробнее в самом щите). 
                 Количество восстановления зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 28px;">Мобильность</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/disengage.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Отскок</span> <br> <span style="font-size: 16px;">Активный обычный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если в оружии не сказано иного)</span><br>
+                Позволяет отпрыгнуть от цели по прямой линии, игнорируя любые препятствия на пути. После прыжка дает бонус к скорости передвижения (позволяет проходить
+                больше тайлов за ход) на несколько ходов. Расстояние, бонус к скорости и длительность зависят от <span class="fire-gradient-text">Ловкости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/evasion.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Уклонение</span> <br> <span style="font-size: 16px;">Активный обычный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения:мгновенная (0% хода)</span><br>
+                Дает вам шанс уклониться от любых атак, а также увеличивает показатель защиты на 4 хода. 
+                Бонусы зависят от <span class="fire-gradient-text">Ловкости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/trainedreactions.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Тренированные рефлексы</span> <br> <span style="font-size: 16px;">Поддерживаемый обычный навык</span><br>
+                Позволяет реагировать на полученный урон быстрее мысли. Пока талант активен, вы моментально реагируете контратакой на любой полученный урон, что уменьшает
+                его и проводит атаку по атакующему. Не работает при ношении тяжелой брони. Уменьшение урона зависит от <span class="fire-gradient-text">Ловкости</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 28px;">Смертоносность</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/lethality.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Смертоносность</span> <br> <span style="font-size: 16px;">Пассивный обычный навык</span><br>
+                Увеличивает шанс нанести критический урон и урон от критических атак в зависимости от <span class="fire-gradient-text">Хитрости</span>. Также ваши 
+                броски метательными ножами теперь могут использовать <span class="fire-gradient-text">Хитрость</span> вместо <span class="fire-gradient-text">Силы</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/exposeweakness.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Обнажить слабости</span> <br> <span style="font-size: 16px;">Активный обычный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: стандарт (100% хода)</span><br>
+                Совершите атаку оружием по цели, обнаруживая ее слабые точки. При успехе, следующие ваши атаки по цели буду иметь увеличенную 
+                эффективную точность, урон и пробитие сопротивления. Также пассивно добавляет пробитие физического сопротивления. Длительность растет с
+                <span class="ice-gradient-text">уровнем</span> таланта, а сила эффектов - с <span class="fire-gradient-text">Хитростью</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/bladeflurry.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Вихрь клинков</span> <br> <span style="font-size: 16px;">Поддерживаемый обычный навык</span><br>
+                Обратитесь в вихрь клинков. Увеличивает вашу скорость атаки (уменьшая процент хода, требуемый на совершение атаки и талантов с типом скорости "оружие") и
+                позволяет наносить вторую атаку при ударе врага (но только по вторичной цели). Увеличение скорости зависит от <span class="fire-gradient-text">Хитрости</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text fire-gradient-text" style="font-size: 28px;">Мерзавец</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/laceratingstrikes.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Разрывающие удары</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
+                Ваши любые атаки имеют шанс разорвать врага, нанося дополнительно часть нанесенного урона в течение 4 ходов. Процент урона зависит от <span class="fire-gradient-text">Хитрости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/scoundreltactics.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Тактики мерзавца</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
+                Ваши любые атаки наносят ужасные раны, которые уменьшают множитель критического удара цели. Также они имеют шанс заставить цель забыть 
+                о случайной способности на несколько ходов, данная часть эффекта может сработать не чаще раза в ход на цель. Длительность зависит от <span class="ice-gradient-text">уровня</span> таланта,
+                а шанс и уменьшение множителя - от <span class="fire-gradient-text">Хитрости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/misdirection.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Нарушение направления</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
+                Вы научились нести хаос и разгром. Когда враг пытается наложить на вас негативный эффект, с неким шансом он ошибается и вместо этого накладывает его на другого врага, находящегося
+                в радиусе зрения вас обоих. Шанс зависит от <span class="fire-gradient-text">Хитрости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/fumble.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Ошибка</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
+                Ваши любые атаки оставляют врагов без возможности сфокусироваться на чем либо, кроме самых простых действий, давая стакающийся шанс ошибки при следующей попытке совершения 
+                чего-либо, кроме движения. Если они из-за этого пропускают ход (теряют действие), они получают урон. Шанс ошибки и урон зависят от <span class="fire-gradient-text">Хитрости</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 28px;">Бандитизм</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/riotborn.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Бунторожденный</span> <br> <span style="font-size: 16px;">Пассивный обычный навык</span><br>
+                Ваша любовь к насилию дает вам сопротивление оглушениям и замешательствам любого рода, увеличивается от <span class="fire-gradient-text">Силы</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/viciousstrikes.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Яростные удары</span> <br> <span style="font-size: 16px;">Пассивный обычный навык</span><br>
+                Увеличивает шанс нанести критический урон, урон от критических атак и пробитие сопротивления физическому урону в зависимости от <span class="fire-gradient-text">Силы</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/totalthuggery.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Полный хаос</span> <br> <span style="font-size: 16px;">Поддерживаемый обычный навык</span><br>
+                Вы идете в разнос в попытке сжечь своих врагов как можно быстрее. Значительно увеличивает шанс критической атаки и пробитие сопротивления физическому урону. 
+                Увеличение зависит от <span class="fire-gradient-text">Силы</span>.
             </div>
         </div>
     </div>
