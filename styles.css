@@ -180,6 +180,19 @@ body, html {
     display: inline-block;
 }
 
+.darkness-gradient-text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, darkred, darkblue, darkgreen);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+
+}
+
 
 hr.animated-gradient {
     height: 4px; /* Устанавливаем высоту линии */
