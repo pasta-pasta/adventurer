@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Приключенец</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="arts/char/fav.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="arts/char/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="arts/char/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="arts/char/favicon-16x16.png">
+    <link rel="manifest" href="arts/char/site.webmanifest">
+    <link rel="mask-icon" href="arts/char/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <div class="container">
@@ -109,7 +115,7 @@
                 <br>
                 Физическая сила: 1.00 <br>
                 Максимальная грузоподъемность: 1.80 <br>
-                Физическое спасение:    0.35 <br>
+                Физический спас-бросок:    0.35 <br>
             </div>
         </div>
         <div class="content-block">
@@ -355,7 +361,7 @@
                 <img src="arts/icons/exoticmastery.png" alt="Описание изображения" class="content-image">
             </div>
             <div class="content-text">
-                <span class="fire-gradient-text">Владение кинжалами</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
+                <span class="fire-gradient-text">Владение экзотическим оружием</span> <br> <span style="font-size: 16px;" class="fire-gradient-text">Пассивный редкий навык</span><br>
                 Увеличивает урон от всех атак в зависимости от <span class="fire-gradient-text">Ловкости и Силы</span>, а также физическую мощь на 30 при использовании экзотического оружия.
             </div>
         </div>
@@ -800,7 +806,7 @@
                 <img src="arts/icons/neverendingunlife.png" alt="Описание изображения" class="content-image">
             </div>
             <div class="content-text">
-                <span class="fire-gradient-text">Путь в Запределье</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                <span class="fire-gradient-text">Вечная нежизнь</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
                 Ваше тело невероятно сложно уничтожить. Увеличивает предел негативной <span class="life-gradient-text">жизни</span>, при которой вы умираете. 
                 Также, даже если вы умерли, вы возвращаетесь к жизни, пересобирая тело собственной силой воли. Однако, вам необходимо поглотить энергию врага 
                 в течение нескольких ходов. Если вы не убили врага или умерли снова за это время, вы больше не можете воскреснуть. 
@@ -1382,9 +1388,36 @@
                 <span class="fire-gradient-text">Крушитель судеб</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
                 <span style="font-size: 16px;">Скорость применения: стандарт (100% хода, если не указано иного)</span><br>
                 Вы переплетаете судьбу врага с вашей на несколько ходов. Если в течение этого времени вы получаете фатальный урон и умираете, реальность отказывается это принимать, 
-                и враг умирает вместо вас. Пока эффект активен, весь урон, получаемый вами, переправляется на врага в виде темпорального и урона тьмой. В конце эффекта, все стаки 
+                и враг умирает вместо вас. Это считается эффектом <span class="death-gradient-text">мгновенной смерти</span> и не считается уроном. Как мы 
+                обсуждали выше, смерть в мире <span class="fire-gradient-text">ToME</span> является окончательным уничтожением объекта, а не просто "смертью". Для защиты от 
+                такого эффекта существует отдельная стойкость к <span class="death-gradient-text">мгновенной смерти</span>. Пока эффект активен, весь урон, получаемый вами, переправляется на врага в виде темпорального и урона тьмой. В конце эффекта, все стаки 
                 проклятия у врага и удачи у вас развеиваются, исцеляя вас. Длительность зависит от <span class="ice-gradient-text">уровня</span> таланта, а исцеление - 
                 от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Обреченность</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/prophecy.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Прорчество</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: стандарт (100% хода, если не указано иного)</span><br>
+                Обрушивает силы энтропии на врага, пророчествуя о его конце. Есть несколько возможных пророчеств: <br>
+                Пророчество о гибели: наносит урон тьмой каждый раз, когда здоровье врага опускается ниже 75%, 50% и 25% (работает и с отрицательными процентами). <br>
+                Пророчество о предательстве: заставляет цель атаковать союзников или себя. <br>
+                Пророчество о безумии: мешает разуму цели, увеличивая шанс ошибки при применении любой способности. <br>
+                Сила пророчеств зависит от <span class="magic-gradient-text">силы заклинаний</span>, а длительность - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/luckdrinker.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Удачеед</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый мифический навык</span><br>
+                Ваши пророчества распространяются по массе, действуя на всех врагов в широкой области. Область зависит от <span class="magic-gradient-text">силы заклинаний</span>.
             </div>
         </div>
     </div>
