@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Приключенец</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="arts/char/fav.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -258,7 +259,7 @@
         <div class="content-text" id="accuracy" style="font-size: 32px;">Восприятие</div>
         <div class="content-text">
             В мире <span class="fire-gradient-text">ToME</span> сложность восприятия влияет только на факт того, может ли одно существо увидеть другое. Если была пройдена проверка обнаружения 
-            (при необходимости, например, <span class="death-gradient-text">скрытности</span>), то вся остальная информация о существе становится доступной. В игре это реализовано кнопкой "изучить существо" - ниже можно увидеть 
+            (при необходимости, например, <span class="death-gradient-text">скрытности</span>), то вся остальная информация о существе становится доступной. В игре это реализовано кнопкой "изучить" - ниже можно увидеть 
             пример ее действия.
         </div>
         <div class="carousel content-block">
@@ -284,7 +285,7 @@
         </div>
         <div class="content-text">
             К тому же, для получения информации о существе не обязательна прямая видимость. Многие таланты позволяют детектировать существ в радиусе, не взирая на стены или любые ограничения. 
-            В мире <span class="fire-gradient-text">ToME</span> не существует способов каким-то образом скрыть информацию о себе или своих способностях - можно только скрыть себя самого, но на это всегда есть контрмеры.
+            В мире <span class="fire-gradient-text">ToME</span> не существует способов каким-то образом скрыть информацию о себе или своих способностях - "изучить" можно любой тайл, получая информацию об объектах на нем.
         </div>
         <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Способности: суть</div>
@@ -1285,8 +1286,51 @@
                 каждая цель имеет шанс получить эффекты оглушения, ослепления, замешательства и оцепенения. Шанс и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
             </div>
         </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Улучшенная мобильность</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/skate.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Скольжение</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Вы телекинетически парите над землей. Значительно увеличивает вашу скорость движения, а также позволяет перелетать через ямы и некоторые ловушки (но не высокие объекты). 
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/quickasthought.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Быстр, как мысль</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Позволяет контролировать ваше тело напрямую, без этих грубых механизмов по типу нервов. Значительно увеличивает точность, шанс критического удара, а также глобальную скорость. 
+                Усиления зависят от <span class="celestial-gradient-text">силы разума</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Ментализм</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/mentalshielding.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Червоточины</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы складываете пространство, создавая пару червоточин на двух тайлах. Любое существо, которое попадает на тайл с червоточиной, моментально оказывается рядом со вторым.
+                Червоточины могут быть помещены в зонах, обычно предотвращающих телепортацию, и игнорируют такого рода ограничения. Возможная дальность растет с <span class="magic-gradient-text">силой заклинаний</span>,
+                а длительность - с <span class="ice-gradient-text">уровнем</span> таланта. 
+            </div>
+        </div>
     </div>
 </body>
+
+
+
+
+
+
+
+
 <script>
     let slideIndex = 0;
 
