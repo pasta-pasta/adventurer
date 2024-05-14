@@ -215,6 +215,27 @@
             <span class="gradient-text">Приключенца</span> предусматривать надо было детальнее.
         </div>
         <hr class="animated-gradient">
+        <div class="content-text" id="defence" style="font-size: 32px;">Характеристики: сопротивление</div>
+        <div class="content-text">
+            Сопротивления (или «резисты») позволяют персонажу снизить долю получаемого урона в зависимости от его типа. Например, сопротивление огню уменьшает урон, 
+            получаемый от любого вида огненного урона - дыхания огненного дракона, таланта «Пламя» архимага и т. д. 
+            <br><br>
+            Отрицательное сопротивление возникает у некоторых типов врагов естественным образом, а также может быть результатом действия некоторых артефактов. 
+            В этом случае цель получает больше 100% урона от удара по той же формуле, что и при обычном сопротивлении. 
+            <br><br>
+            «Сопротивление всему» применяется независимо от сопротивлений отдельных элементов. 
+            Если у вас 15% сопротивления всему и 20% сопротивления огню, вы будете резистить 32% всего урона от огня
+            (при отсутствии пробития сопротивления огню у вашего противника). 
+            <br><br>
+            Пробитие сопротивления уменьшает эффективный уровень соответствующего сопротивления вашего противника в количественной мере. 
+            Например, если у вашего противника сопротивление огню 30%, а у вас проникновение сопротивления огню 10%, и вы ударите противника огнем, 
+            его эффективное сопротивление огню снизится до 27%. 
+            <br><br>
+            Снижение сопротивления уменьшает эффективный уровень соответствующего сопротивления противника аддитивно. 
+            Например, если у вашего противника сопротивление огню 30%, а вы используете талант, снижающий его сопротивление огню на 20%, 
+            то под действием этого таланта у него будет сопротивление огню 10%. 
+        </div>
+        <hr class="animated-gradient">
         <div class="content-text" id="accuracy" style="font-size: 32px;">Характеристики: точность</div>
         <div class="content-text">
             Точность - это противовес защиты. Использует ту же механику, что и спас-броски, чтобы понять, попадает ли атака. Как и в случае с защитой, точность 
@@ -230,8 +251,36 @@
         </div>
         <hr class="animated-gradient">
         <div class="content-text">
-            Все характеристики <span class="gradient-text">Приключенца</span> улучшены до предела; все возможные значения доведены либо до 100%, либо стремятся к 100% (для процентных и мультипликативных значений), либо являются
+            Все вышеописанные характеристики <span class="gradient-text">Приключенца</span> улучшены до предела; все возможные значения доведены либо до 100%, либо стремятся к 100% (для процентных и мультипликативных значений), либо являются
             просто абсурдно большими (для абсолютных значений).
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" id="accuracy" style="font-size: 32px;">Восприятие</div>
+        <div class="content-text">
+            В мире <span class="fire-gradient-text">ToME</span> сложность восприятия влияет только на факт того, может ли одно существо увидеть другое. Если была пройдена проверка обнаружения 
+            (при необходимости, например, <span class="death-gradient-text">скрытности</span>), то вся остальная информация о существе становится доступной. В игре это реализовано кнопкой "изучить существо" - ниже можно увидеть 
+            пример ее действия.
+            <div class="carousel content-block">
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="arts/other/inspect1.png" alt="Image 1" class="main-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="arts/other/inspect2.png" alt="Image 2" class="main-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="arts/other/inspect3.png" alt="Image 3" class="main-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="arts/other/inspect4.png" alt="Image 4" class="main-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="arts/other/inspect5.png" alt="Image 5" class="main-image">
+                    </div>
+                </div>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
         </div>
         <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Способности: суть</div>
@@ -879,6 +928,7 @@
                 Длительность зависит от <span class="magic-gradient-text">силы заклинаний</span>.
             </div>
         </div>
+        <hr class="animated-gradient">
         <div class="content-text fire-gradient-text" style="font-size: 28px;">Проклятия</div>
         <div class="content-block">
             <div class="content-image">
@@ -1143,6 +1193,121 @@
                 Этот эффект можно применить лишь один раз за зону (т.е. за бой). Длительность каждого потока зависит от <span class="magic-gradient-text">силы заклинаний</span>.
             </div>
         </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Плетение судьбы</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/spinfate.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Колесо Судьбы</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Каждый раз, когда вы получаете урон, вы получаете один заряд Спина, который повышает вашу защиту и спас-броски. 
+                Сила бонуса зависит от <span class="magic-gradient-text">силы заклинаний</span>, а длительность - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/sealfate.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Закупорить Судьбу</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Активируйте, чтобы закупорить собственную Судьбу на несколько ходов. Каждый раз, пока вы наносите урон кому-либо, вы получаете заряд Спина, а также имеете шанс 
+                увеличить длительность негативных эффектов на цели на несколько ходов. Шанс и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/spinfate.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Ткач Судьбы</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Вы дополнительно получаете бонус к точности, <span class="fire-gradient-text">физической силе</span>, <span class="magic-gradient-text">силе заклинаний</span>
+                и <span class="celestial-gradient-text">силе разума</span> за каждый заряд Спина. Бонусы зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/websoffate.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Паутины Судьбы</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Следующие несколько ходов вы рассеиваете часть полученного урона на ближайшего врага. Также, пока активен этот талант, вы получаете дополнительный заряд Спина каждый ход, 
+                а их максимум удвоен. Процент урона зависит от <span class="magic-gradient-text">силы заклинаний</span>, а количество ходов - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Плетение континуума</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/dimensionalstep.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Шаг сквозь измерения</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Вы моментально перемещаетесь в выбранный тайл. Если на целевом тайле находится объект, вы меняетесь с ним местами. Дальность зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/dimensionalshift.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Мерный сдвиг</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Каждый раз, когда вы совершаете мгновенное перемещение, вы уменьшаете длительность негативных эффектов на вас на несколько ходов. 
+                Количество ходов зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/wormholes.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Червоточины</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы складываете пространство, создавая пару червоточин на двух тайлах. Любое существо, которое попадает на тайл с червоточиной, моментально оказывается рядом со вторым.
+                Червоточины могут быть помещены в зонах, обычно предотвращающих телепортацию, и игнорируют такого рода ограничения. Возможная дальность растет с <span class="magic-gradient-text">силой заклинаний</span>,
+                а длительность - с <span class="ice-gradient-text">уровнем</span> таланта. 
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/phasepulse.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Фазовый пульс</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Каждый раз, когда вы совершаете мгновенное перемещение, вы запускаете мгновенный луч во всех врагов вокруг точек старта и назначения. За каждый пройденный телепортом тайл, 
+                каждая цель имеет шанс получить эффекты оглушения, ослепления, замешательства и оцепенения. Шанс и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
     </div>
 </body>
+<script>
+    let slideIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        if (index >= totalSlides) {
+            slideIndex = 0;
+        } else if (index < 0) {
+            slideIndex = totalSlides - 1;
+        } else {
+            slideIndex = index;
+        }
+
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
+
+    function moveSlide(direction) {
+        showSlide(slideIndex + direction);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(slideIndex);
+    });
+</script>
 </html>

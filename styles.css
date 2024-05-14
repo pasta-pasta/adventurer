@@ -63,6 +63,44 @@ body, html {
     font-size: 58px;
 }
 
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
 .gradient-text {
     background: linear-gradient(90deg, #ff7e5f 0%, #cd0ff3 100%);
     background-size: 200% 200%;
