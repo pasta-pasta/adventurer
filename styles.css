@@ -67,7 +67,9 @@ body, html {
     position: relative;
     width: 100%;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden; /* Предотвращает выход теней за пределы контейнера */
+    position: relative; /* Устанавливает новый контекст для z-index */
+    z-index: 1;
 }
 
 .carousel-container {
