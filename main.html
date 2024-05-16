@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="arts/char/favicon-16x16.png">
     <link rel="manifest" href="arts/char/site.webmanifest">
     <link rel="mask-icon" href="arts/char/safari-pinned-tab.svg" color="#5bbad5">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -298,7 +299,7 @@
         <div class="content-text">
             В мире <span class="fire-gradient-text">ToME</span> существует множество типов урона, каждый из которых имеет свои особенности и способы сопротивления. 
             Ниже приведены основные типы урона и их особенности. <span class="gradient-text">Приключенец</span> способен получать урон только этих типов, но и наносить тоже может 
-            только такой урон. Если урон не входит в список, он не воспринимается системой.
+            только такой урон. Если урон не входит в список, он не воспринимается системой (если данная особенность противоречит условиям боя, то входящий урон конвертируется в наиболее подходящий по смыслу тип).
             <h2 class="content-text">Базовый физический</h2>
             <p>Вызывается обычными атаками ближнего и дальнего боя оружием. Это самый распространённый тип урона.</p>
 
@@ -344,7 +345,10 @@
         <div class="content-text">
             Статус-эффекты - это эффекты, которые могут быть наложены на существо и влияют на его способности. Они могут быть положительными или отрицательными, и могут быть вызваны различными источниками, такими как таланты, заклинания, артефакты и т. д.
             Ниже описаны все возможные эффекты в мире <span class="fire-gradient-text">ToME</span>, которые могут быть наложены на существо. <span class="gradient-text">Приключенец</span> может получать и накладывать только указанные ниже эффекты, также 
-            как с типами урона.
+            как с типами урона  (аналогично, если данная особенность противоречит условиям боя, то входящий эффект конвертируется в наиболее подходящий по смыслу). Также существуют эффекты способностей - 
+            обычно это просто прокси-эффект, который накладывает другие эффекты, или является подтипом указанных ниже эффектов. 
+            Важно отметить, что все эффекты считаются статус-эффектами в рамках системы и могут быть сняты только методами, ею предусмотренными: в данном случае это различные таланты и предметы, 
+            кинуть спас-бросок можно только в момент наложения эффекта. Эффект "горения" нельзя снять, искупавшись в воде. Верно и обратное: для положительных эффектов. 
             <h2>Положительные эффекты</h2>
             <span class="ice-gradient-text">Магические</span>
             <span>:</span>
@@ -488,7 +492,36 @@
                 <li><span class="death-gradient-text">Дестабилизация призыва</span>: Увеличивает время перезарядки для талантов призыва.</li>
                 <li><span class="death-gradient-text">Поле восстановления времени</span>: Бонус от использования Временного щита. Восстанавливает 10% от полученного урона в течение времени действия щита в виде исцеления каждый ход.</li>
                 <li><span class="death-gradient-text">Тюрьма времени</span>: Цель удаляется из обычного временного потока, не может действовать, но не может получать урон. Время не течет для этого существа.</li>
+                <li><span class="death-gradient-text">Мгновенная смерть</span>: Крайне редкий эффект, вызывающий мгновенное уничтожение цели. Не наносит урона и 
+                    не может быть заблокирован, кроме отдельной стойкости ко мгновенной смерти. Также, как и в случае с уроном в мире <span class="fire-gradient-text">ToME</span>,
+                    мгновенная смерть — явление, затрагивающее даже те явления и категории, которые неподвластны классификации "живой / неживой", 
+                    будь то пространственные разломы и временные петли, фрагменты истории и абстрактные иерархии,
+                    нематериальные и недосягаемые астральные сущности либо же весь информационный план бытия целиком. Явление мгновенной смерти - манипуляция информационной составляющей объекта
+                    в рамках игровой механики, которая действует в обход алгоритмов проверки прочности / количества здоровья, выставляя булевое (логическое) значение прогрузки на 0 (ложь). 
+                    Объект, который более не прогружается, теряет свою модель (материальное тело), не может применять свои умения и особые свойства, для него более не идет время, 
+                    его не просчитывает игровой движок, он не находится ни в какой точке пространства - но сам класс объекта остается неизменным, 
+                    так как влияния на его атрибуты не совершалось. Срабатывают ивенты, связанные со смертью, но как таковой смерти не происходит.
+                    Можно интерпретировать мгновенную смерть как перемещение объекта с поля боя в "информационный вакуум", в концентрированное ничто, 
+                    с которым невозможно какое-либо взаимодействие; хотя на самом деле никакого перемещения, что понятно из объяснений выше, не происходит.
+                </li>
             </ul>
+            <pre><code class="language-lua">
+            function instantDeath(target)
+                if target:hasEffect(target.EFF_INSTANT_DEATH_RESISTANCE) then
+                    local resistance = target:getEffect(target.EFF_INSTANT_DEATH_RESISTANCE)
+                    local randomValue = math.random(1, 100)
+                    if randomValue <= resistance then
+                        return
+                    end
+                end
+            
+                target.loaded = false
+            
+                if target.onDeath then
+                    target:onDeath()
+                end
+            end
+            </code></pre>
         </div>
         <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Способности: суть</div>
@@ -504,6 +537,22 @@
         <div class="content-text">
             Как такого отличия между <span class="magic-gradient-text">классовыми</span> и <span class="celestial-gradient-text">общими</span> способностями нет - они просто находятся в разных категориях. 
             Но при этом все способности, происходящие от расы персонажа, всегда находятся в <span class="celestial-gradient-text">общих</span>.
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 32px;">Щиты</div>
+        <div class="content-text">
+            Щиты - это вид заклинаний и положительных эффектов. В общем смысле, щит - это эффект, который поглощает урон, прежде чем он попадет на ваше здоровье. Щиты не имеют физического 
+            воплощения и могут быть расценены как дополнительные очки <span class="life-gradient-text">жизни</span>, которые вы можете потерять, 
+            прежде чем ваше здоровье начнет уменьшаться, плюс имеющие дополнительные эффекты. В общем случае щиты блокируют весь получаемый урон, если в способности не сказано обратного. Все поддерживаемые щиты 
+            восстанавливаются, если не получают урона в течение одного хода. 
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 32px;">Поддерживаемые способности</div>
+        <div class="content-text">
+            Поддерживаемые способности - это тип способностей, который требует единоразовой активации и работает все время в дальнейшем, если не будет отключен или сбит. 
+            Вопреки названию, они не расходуют ресурс каждый ход (за редким исключением) - они уменьшают возможный максимум ресурса, что, очевидно,
+            никак не мешает <span class="gradient-text">Приключенцу</span>. 
+            На момент начала боя у <span class="gradient-text">Приключенца</span> функционируют все поддерживаемые способности, если не указано обратного.
         </div>
         <hr class="animated-gradient">
         <div class="content-text">
@@ -1716,12 +1765,186 @@
                 Данный эффект срабатывает, пока у вас есть гули, и не требует дополнительных проверок.
             </div>
         </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Мастер ужаса</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/dread.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Ужас</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы призываете летающий раздражающий Ужас. Базовый уровень Ужаса равен вашему уровню, и изменяется в зависимости от <span class="ice-gradient-text">уровня</span> таланта, получая небольшой бонус после 5 уровня.
+                Ужаслетает, имеет базовую скорость в 500%, знает все ваши заклятия раздела <span class="fire-gradient-text">Проклятия</span> и <span class="fire-gradient-text">Сглазы</span>, <span class="fire-gradient-text">Фазовую Дверь</span>, а также <span class="fire-gradient-text">Размытое Зрение</span>, которое пассивно увеличивает его защиту.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/souleater.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Душеед</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Каждый раз, когда умирает или возрождается любой из ваших миньонов, Ужас питается этим. Он получает бонусы к максимальной и текущей <span class="life-gradient-text">жизни</span>,
+                восполняет свои ресурсы, а также каждые 10 смертей он применяет случайный сглаз на всех врагов в радиусе. Бонус зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/neverendingperil.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Вечная опасность</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                В целях сделать ваш Ужас еще более раздражающим, вы делаете его полностью неуязвимым к любому урону или эффектам контроля на несколько ходов. 
+                Длительность зависит от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/dreadmaster.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Мастер-Ужас</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Теперь вы призываете Мастер-Ужас вместо обычного. Теперь он может применять <span class="fire-gradient-text">Безмолвие</span>, <span class="fire-gradient-text">Развеивание магии</span> и <span class="fire-gradient-text">Мозговую помеху</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Ледовый расход</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/hiemalshield.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Щит Химали</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Вы создаете льдистый щит вокруг себя. Щит поглощает урон, и при каждом его получении щит наносит врагу урон <span class="ice-gradient-text">холодом</span>.
+                Когда у вас больше 1 единицы <span class="life-gradient-text">жизни</span>, щит поглощает только 2\3 урона, а когда меньше - весь, и также снижает получаемый 
+                критический урон. Сила щита зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/desolatewaste.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Опустошенный Расход</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Каждый раз, когда любой из ваших щитов теряет 25% его оригинальной прочности, круг опустошенного расхода появляется вокруг вас на несколько ходов, 
+                нанося всем врагам урон <span class="ice-gradient-text">холодом</span>. Если существо получает урон от <span class="fire-gradient-text">Щита Химали</span>, пока находится
+                в зоне действия расхода, щит восстанавливает часть своей прочности. Урон и восстановление зависят от <span class="magic-gradient-text">силы заклинаний</span>, 
+                а длительность круга - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/crumblingearth.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Сокрушающаяся земля</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Ваш опустошенный расход отныне яростно сокрушается. Любой враг, двигающийся через него, получает дополнительный урон <span class="ice-gradient-text">холодом</span>
+                и эффект кровотечение (стакающийся), а также испытывает замедление глобальной скорости. Урон и замедление зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/bleakgurad.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Блеклая защита</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Пассивный уникальный навык</span><br>
+                Ваш <span class="fire-gradient-text">Щит Химали</span> становится сильнее, получая меньше урона от всех источников. Пока у вас меньше 1 единицы <span class="life-gradient-text">жизни</span>,
+                данный эффект усиливается в 1.33 раза. Усиление зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Мастер-некромант</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/auraofundeath.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Аура Несмерти</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Ваше мастерство некромантии оборачивается в ауру несмерти вокруг вас. Любая дружественная нежить внутри ауры получает увеличение всех сопротивлений, 
+                а также наследует некоторый процент вашей <span class="magic-gradient-text">силы заклинаний</span>, шанса критического удара заклинанием, спас-бросков, 
+                сопротивлений, увеличения урона и пробития сопротивлений. Бонусы и радиус ауры зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/surgeofundeath.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Выброс Несмерти</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы наполняете свою Ауру Несмерти дополнительной энергией. Вся дружественная нежить внутри ауры получает увеличение глобальной скорости, 
+                все не-гули излечиваются, длительность эффектов способностей из дерева <span class="fire-gradient-text">Мастер плоти</span> увеличивается, а все враги 
+                в радиусе ауры получают ошеломление на несколько ходов. Бонусы и длительность ошеломления зависят от <span class="magic-gradient-text">силы заклинаний</span>, 
+                а длительность эффектов - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/sufferforme.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Страдай для меня</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Поддерживаемый мифический навык</span><br>
+                Создавая тайную связь со своей армией, вы можете перенаправлять любой получаемый урон на любую дружественную вам нежить. Каждый раз, когда вы получаете любой урон, 
+                он перенаправляется на выбранное дружественное существо-нежить. Существо получает 300% от этого урона. 
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Эра Сумерек</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/direplague.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Мрачная чума</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы выпускаете праведное видение прошлого, когда континент был переполнен смертью и болезнями. Все враги в радиусе заражаются мрачной чумой, 
+                получая урон <span class="darkness-gradient-text">тьмой</span> каждый ход. Чума считается болезнью, но при этом против нее не помогает любого рода иммунитет к болезням. 
+                Каждый ход у болезни есть небольшой шанс вырвать кусочек души цели, нанося критический урон и отключая случайную пассивную или поддерживаемую способность. 
+                Урон, шанс и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/crepuscule.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Полночь</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы взываете к темной ночи, чтобы она помогла вам в течение нескольких ходов. Поле боя накрывается магической тьмой, блокируя любые виды восприятия, кроме магического. 
+                Каждый ход вы автоматически стреляете лучом <span class="darkness-gradient-text">тьмы</span> в случайного врага (в приоритете самые далекие), нанося урон 
+                <span class="darkness-gradient-text">тьмой</span> всем врагам на пути. Урон зависит от <span class="magic-gradient-text">силы заклинаний</span>,
+                а длительность - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/theendofallhope.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Конец всей надежды</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Каждый раз, когда ваша <span class="fire-gradient-text">Мрачная чума</span> вырывает душу, эта душа ощущает безысходный приход к концу. 
+                Когда это происходит, действия всех остальных эффектов мрачной чумы продлевается, а цель подвергается эффекту <span class="death-gradient-text">мгновенной смерти</span>, 
+                после чего вы сразу же воскрешаете ее в виде воина-скелета подходящего класса. Тажке пассивно увеличивает шанс вырывания души. 
+                Шанс и продление длительности растут с <span class="magic-gradient-text">силой заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/goldenage.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Золотая эра некромантии</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Поддерживаемый мифический навык</span><br>
+                Вы вспоминаете давно ушедшее время, когда некроманты повелевали миром. Увеличивает все ваши спас-броски, сопротивление ошеломлению и телепорту, 
+                а также, когда вы пересекаете границу 1 единицы <span class="life-gradient-text">жизни</span>, вы становитесь неуязвимы к любому урону и эффектам на несколько ходов. 
+                Бонусы и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-lua.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 </body>
-
-
-
-
 
 
 
