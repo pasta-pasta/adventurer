@@ -70,6 +70,23 @@
             на все объекты на нем, но не на сам тайл. 
         </div>
         <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 32px;">Игрок</div>
+        <div class="content-text">
+            <span class="gradient-text">Приключенец</span> - персонаж игрока. Это отличает его от всех остальных живых существ в мире: 
+            он игрок, остальные - "мобы". Игрок - это тот, кто принимает решения, управляет персонажем, выбирает действия и следит за ходом игры. Кроме 
+            <span class="gradient-text">осознанности</span>, титул игрока дает не так много бонусов. Вот некоторые из них: 
+            <br><br>
+            Когда все выбрали действия и движок разрешает ход, действия игрока, если это возможно, обрабатываются первыми. Это не дает серьезного преимущества, но, например,
+            если игрок за 100% хода применил луч с instant скоростью, а враг за 100% хода излечился, сначала обработается урон, а уже потом излечение. Это возможно только если действия 
+            начались в один и тот же момент хода. 
+            <br><br>
+            Игрок всегда имеет 100% иммунитет к эффекту <span class="death-gradient-text">мгновенной смерти</span>. 
+            <br> <br>
+            Игрок видит поле боя со стороны, воспринимая все тайлы одинаково четко вне зависимости от реального поля зрения (подробнее есть в соответствующих талантах).
+            <br><br>
+            Игроку доступна информация о всех существах на поле боя, включая их характеристики, способности и статусы - об этом подробнее в пункте "Восприятие".
+        </div>
+        <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Жизнь и нежизнь</div>
         <div class="content-text">
             Все в мире <span class="fire-gradient-text">ToME</span> имеет показатель <span class="life-gradient-text">жизни</span>. <span class="life-gradient-text">Жизнь</span> -
@@ -1927,6 +1944,93 @@
                 Вы вспоминаете давно ушедшее время, когда некроманты повелевали миром. Увеличивает все ваши спас-броски, сопротивление ошеломлению и телепорту, 
                 а также, когда вы пересекаете границу 1 единицы <span class="life-gradient-text">жизни</span>, вы становитесь неуязвимы к любому урону и эффектам на несколько ходов. 
                 Бонусы и длительность зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Истребление</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/boneyard.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Кладбище</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Призовите кладбище вокруг вас на несколько ходов. Любой враг, оказавшийся в радиусе кладбища, теряет сопротивление к физическому урону. Любая дружественная 
+                нежить внутри кладбища получают бонусы к <span class="fire-gradient-text">физической силе</span> и <span class="magic-gradient-text">силе заклинаний</span>,
+                а также, если она умирает внутри кладбища, то с некоторым шансом возраждается. Снижение сопротивления, бонусы, радиус и шанс возрождения зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>, а длительность - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/tothegrave.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">В могилу</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Вы телепортируете всех врагов в широком радиусе на активное кладбище, если оно существует, как можно ближе к его центру. Несколько скелетов и гулей призываются 
+                вокруг каждого из врагов, но они живут вдвое меньше обычных. Радиус телепорта зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/impendingdoom.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Надвигающийся рок</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Конец вашей цели приближается. Ее любое получаемое лечение уменьшено на 80%, а также в течение нескольких ходов она будет получать урон 
+                <span class="darkness-gradient-text">тьмой</span> и <span class="ice-gradient-text">холодом</span> каждый ход. Общее количество нанесенного урона является процентом 
+                от максимального здоровья цели. Каждые три хода это заклинание вырывает душу цели, нанося критический урон; 
+                к этому применим эффект способности <span class="mythical-gradient-text">Конец всей надежды</span>. 
+                Урон зависит от <span class="magic-gradient-text">силы заклинаний</span>, а длительность - от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/eternalnight.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Вечная ночь</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Поддерживаемый уникальный навык</span><br>
+                Вы окружаете себя вечной ночью, увеличивая весь наносимый вами урон <span class="darkness-gradient-text">тьмой</span> и <span class="ice-gradient-text">холодом</span>,
+                получая значительное пробитие сопротивления к этим типам урона, а также получая вампиризм от любого нанесенного урона. Бонусы зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 28px;">Скрытность</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/stealth.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Скрытность</span> <br> <span style="font-size: 16px;">Активный обычный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Вы активируете режим скрытности. В этом режиме враги не могут вас заметить и не знают, где вы находитесь, вне зависимости от применяемых вами действий. 
+                Враги могут увидеть вас (перепроверяется каждый ход), если успешно пройдут проверку против вашей <span class="fire-gradient-text">Хитрости</span>, 
+                помноженной на <span class="ice-gradient-text">уровень</span> таланта. Вы не можете активировать скрытность, если есть враги в радиусе двух тайлов от вас. 
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/shadowstrike.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Удар из тени</span> <br> <span style="font-size: 16px;">Пассивный обычный навык</span><br>
+                Когда вы атакуете из скрытности, ваши атаки автоматически становятся критическими, если цель не замечает вас до того, как атака будет нанесена (атаки магией и 
+                разумом критические вне зависимости от этого). Ваш множитель критического урона значительно увеличен против целей, которые не могут вас видеть. Бонусы сохраняются 
+                на три хода после выхода из скрытности.  
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/shadowdance.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Танец теней</span> <br> <span style="font-size: 16px;">Активный обычный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Ваше мастерство скрытности позволяет исчезать из пространства в любой момент. Позволяет активировать скрытность вне зависимости от любых условий, а также 
+                сбросить все внимание врагов, если вы уже в скрытности.
             </div>
         </div>
     </div>
