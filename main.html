@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="arts/char/favicon-16x16.png">
     <link rel="manifest" href="arts/char/site.webmanifest">
     <link rel="mask-icon" href="arts/char/safari-pinned-tab.svg" color="#5bbad5">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -501,27 +500,17 @@
                     Объект, который более не прогружается, теряет свою модель (материальное тело), не может применять свои умения и особые свойства, для него более не идет время, 
                     его не просчитывает игровой движок, он не находится ни в какой точке пространства - но сам класс объекта остается неизменным, 
                     так как влияния на его атрибуты не совершалось. Срабатывают ивенты, связанные со смертью, но как таковой смерти не происходит.
+                    Эффект рекурсивно проходится по всем родительским классам объекта, если таковые есть, и применяет к ним тот же эффект (часть-целое).
                     Можно интерпретировать мгновенную смерть как перемещение объекта с поля боя в "информационный вакуум", в концентрированное ничто, 
                     с которым невозможно какое-либо взаимодействие; хотя на самом деле никакого перемещения, что понятно из объяснений выше, не происходит.
                 </li>
             </ul>
-            <pre><code class="language-lua">
-            function instantDeath(target)
-                if target:hasEffect(target.EFF_INSTANT_DEATH_RESISTANCE) then
-                    local resistance = target:getEffect(target.EFF_INSTANT_DEATH_RESISTANCE)
-                    local randomValue = math.random(1, 100)
-                    if randomValue <= resistance then
-                        return
-                    end
-                end
-            
-                target.loaded = false
-            
-                if target.onDeath then
-                    target:onDeath()
-                end
-            end
-            </code></pre>
+            <div class="content-block-centered">
+                <img class="main-image" src="arts/other/instantdeathcode.png" alt="abilities">
+            </div>
+            <div class="content-text">
+                Код из игры, отвечающий за эффект мгновенной смерти.
+            </div>
         </div>
         <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Способности: суть</div>
@@ -1941,9 +1930,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-lua.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 </body>
 
 

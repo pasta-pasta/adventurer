@@ -38,6 +38,13 @@ body, html {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Тень вокруг контейнера */
 }
 
+.content-block-centered {
+    display: flex;
+    justify-content: center; /* Выравнивание по центру */
+    align-items: center; /* Выравнивание по центру */
+    margin-bottom: 20px; /* Отступ между блоками */
+}
+
 .content-block {
     display: flex;
     margin-bottom: 20px; /* Отступ между блоками */
