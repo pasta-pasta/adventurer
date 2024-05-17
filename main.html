@@ -530,6 +530,63 @@
             </div>
         </div>
         <hr class="animated-gradient">
+        <div class="content-text" style="font-size: 32px;">Скорость</div>
+        <div class="content-text">
+            <span class="magic-gradient-text">Скорость заклинаний в ход</span> <br><br>
+            Три переменные влияют на вашу скорость в бою, и вместе они комбинируются, чтобы дать вам количество заклинаний в ход (ЗЗХ). То же самое применимо для атак оружием, только вместо 
+            скорости каста используется скорость атаки. Переменные — это Глобальная скорость, Скорость каста и Скорость оружия.
+            <br><br>
+            Игровая механика использует энергию для отслеживания всех этих параметров. 100% глобальной скорости дает вам 1000 очков энергии за ход (ОЭЗХ), 
+            и обычное заклинание стоит 1000 очков энергии за заклинание (ОЭЗ).
+            <br><br>
+            Таким образом, для обычного персонажа с 100% глобальной скоростью, с обычной скоростью каста 100%, и с обычным оружием со скоростью 100%, вы получаете ровно 1 заклинание за ход (1000 ОЭЗХ / 1000 ОЭЗ = 1.00 ЗЗХ).
+            <br><br>
+            Формула заклинаний в ход (ЗЗХ) выглядит следующим образом:
+            <br><br>
+            Заклинания в ход = Глобальная_скорость x Скорость_оружия x Скорость_заклинания
+            <br><br>
+            Все проценты следует делить на 100. Например:
+            <br><br>
+            Глобальная скорость = 200%<br>
+            Скорость оружия = 143%<br>
+            Скорость каста = 90%<br>
+            Тогда получаем: Заклинания в ход = 2.00 x 1.43 x 0.9 = 2.57 заклинания в ход
+            <br><br>
+            Однако, я нахожу полезным проводить расчеты со мнимой 1000 энергии, поэтому буду придерживаться этого в расчетах ниже. Скорость оружия и скорость каста оба влияют на Очки энергии за заклинание (ОЭЗ). Сначала рассмотрим эти параметры.
+            <br><br>
+            <span class="magic-gradient-text">Скорость оружия</span><br><br>
+            Скорость оружия указана на оружии как 100% для обычного оружия, но луки и посохи имеют базу в 125%. Все, что выше 100%, "быстрее", и все, что ниже 100%, "медленнее". 
+            <br><br>
+            Этот процент делится на очки энергии за заклинание (ОЭЗ). 
+            <br><br>
+            <span class="magic-gradient-text">Скорость заклинания</span><br><br>
+            Скорость заклинания также уменьшает/увеличивает количество очков энергии за заклинание ОЭЗ. Скорость заклинания уменьшается/увеличивается многими талантами. 
+            <br><br>
+            Некоторые таланты уменьшают скорость заклинания. В этом случае ОЭЗ увеличивается.
+            <br><br>
+            <span class="magic-gradient-text">Глобальная скорость</span><br><br>
+            Глобальная скорость увеличивает количество очков энергии за ход ОЭЗХ. Таким образом, увеличение на 40% дает вам 1400 ОЭЗХ. Таким образом, у вас больше времени (= энергии) для выполнения действий.
+            <br><br>
+            Снаряжение и таланты могут увеличивать глобальную скорость, некоторые временно, а некоторые постоянно.
+            <br><br>
+            <span class="magic-gradient-text">Скорость движения</span><br><br>
+            Скорость движения не напрямую связана с количеством заклинаний в ход, но она влияет на количество энергии. Перемещение на одну клетку требует 1000 энергии. Если скорость движения больше 100%, используется меньше 1000 энергии за ход на перемещение, оставляя некоторую энергию. Это может накапливаться за несколько ходов, пока не будет достаточно для дополнительного заклинания в ход.
+            <br><br>
+            <span class="magic-gradient-text">Когда я получаю свои дополнительные заклинания в ход?</span><br><br>
+            Вы должны накопить энергию до той степени, когда у вас будет достаточно для выполнения более чем одного действия за ход. 
+            Например, у вас скорость оружия 125% и нет других модификаторов. 
+            Это переводится в использование энергии на 80% (1/1.25). 
+            Таким образом, в первый ход вы накапливаете 200 энергии, затем 400, затем 600, затем 800. На этом этапе вы используете 800 для вашего первого заклинания, 
+            используя вашу запасную энергию, и затем вы получаете ваше второе заклинание. 
+            <br><br>
+            <span class="magic-gradient-text">Ходы, скорость и манипуляция временем</span><br><br>
+            Исходя из всей вышесказанной информации, очевидно, что любое получение дополнительных ходов, даже через способности, отсылающие на время, не является манипуляцией времени. По факту, 
+            дополнительный ход - это просто дополнительное действие в рамках одного хода, а не дополнительное время. Время в игре <span class="fire-gradient-text">ToME</span> - это абстрактное понятие,
+            которое не поддается манипуляции, и все действия в игре происходят в рамках не привязанных к промежуткам времени ходов. Все это также относится к любым временным эффектам - если в эффекте 
+            напрямую не указано <span class="mythical-gradient-text">нарушение причинности</span>, как во <span class="mythical-gradient-text">Взгляде сквозь Потоки</span>, он не 
+            считается манипуляцией временем. 
+        </div>        
+        <hr class="animated-gradient">
         <div class="content-text" style="font-size: 32px;">Способности: суть</div>
         <div class="content-text">В мире <span class="fire-gradient-text">ToME</span> развитие существ происходит за счет способностей, и строится по следующим принципам:</div>
         <div class="content-text">
@@ -2031,6 +2088,170 @@
                 <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
                 Ваше мастерство скрытности позволяет исчезать из пространства в любой момент. Позволяет активировать скрытность вне зависимости от любых условий, а также 
                 сбросить все внимание врагов, если вы уже в скрытности.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Контроль темпа</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/celerity.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Быстродействие</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Каждый раз, когда вы совершаете движение, вы получаете дополнительную скорость передвижения на несколько ходов.Эффект стакается до трех раз, но может сработать только раз в ход. Получаемый бонус зависит от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/timedilation.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Замедление потока</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Каждый раз, когда вы используете любой не-мгновенный талант, связанный с потоком, вы получаете дополнительную скорость атаки, заклинаний и разума (по факту получая 
+                доп. ходы для этих действий), до 200% за срабатывание. Эффект стакается до трех раз, но может сработать только раз в ход. Получаемый бонус зависит от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/haste.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Ускорение</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Значительно увеличьте вашу глобальную скорость на несколько ходов. Длительность и усиление зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/timestop.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Остановка времени</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода)</span><br>
+                Получите несколько дополнительных ходов. Пока вы действуете в дополнительном времени, весь наносимый вами или вашими призванными существами урон уменьшен до 0% 
+                конечным множителем, а все проджектайлы (стрелы, заклинания, не являющиеся лучами) не двигаются. Количество получаемых ходов зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text celestial-gradient-text" style="font-size: 28px;">Разделение лука</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/arrowstitching.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Соединение стрел</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если не указано обратное)</span><br>
+                Выстрелите из вашего лука. В момент попадания стрела призывает двух стражей времени, которые также делают по выстрелу и исчезают обратно в свой таймлайн. 
+                Пассивно: любые проджектайлы вас и дружественных стражей проходят через дружественных существ без нанесения урона.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/singularityarrow.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Стрела сингулярности</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если не указано обратное)</span><br>
+                Выстрелите из вашего лука с бонусным уроном. В момент попадания стрела вызывает разрушающую пространство сингулярность, которая притягивает к себе всех вражеских существ,
+                нанося им физический урон. Основная цель получает дополнительный урон в зависимости от количества притянутых целей. Урон и радиус зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/arrowechoes.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Эхо стрел</span> <br> <span style="font-size: 16px;" class="celestial-gradient-text">Активный уникальный навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если не указано обратное)</span><br>
+                Выстрелите из лука. В течение нескольких ходов с вашей текущей локации будут автоматически производиться выстрелы по цели, которые не тратят ход. 
+                Выстрелы могут использовать любые из ваших способностей луков. Длительность зависит от <span class="ice-gradient-text">уровня</span> таланта.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Темпоральный страж</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/strengthofpurpose.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Сила Предназначения</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Вы получаете увеличение <span class="fire-gradient-text">физической силы</span> и наносимого урона, а также можете использовать 
+                <span class="fire-gradient-text">магию</span> вместо <span class="fire-gradient-text">силы</span> для расчета урона оружия.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/guardianunity.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Единство Стражей</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Когда вы вот-вот получите урон, равный определенной части от вашего максимального здоровья, другой вы появляется и принимает урон на себя, а также часть всего 
+                урона на протяжении нескольких ходов. Эта копия вас выпадает из фазы реальности, наносит всего 50% урона, но может применять все ваши способности. Только один другой вы 
+                от этого таланта может существовать в один момент времени. Количество урона, который принимает другой вы, зависит от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/vigilance.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Бдение</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Увеличивает ваше наблюдение и возможность видеть сквозь любое сокрытие, а также дает шанс сбросить случайный негативный эффект каждый ход. Бонусы зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/wardensfocus.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Фокусировка стража</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если не указано обратное)</span><br>
+                Нанесите атаку любым оружием по цели. В течение нескольких ходов все способности со случайным выбором цели будут использовать эту цель.
+                Любые атаки против цели получат увеличение шанса критического удара и множителя критического урона, а вы будете получать меньше урона от всех других целей. 
+                Длительность и бонусы зависят от <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Боевое использование потоков</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/wardenscall.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Зов стража</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Пассивный мифический навык</span><br>
+                Каждый раз, когда вы наносите урон врагу атакой, есть шанс что из другой временной линии появится страж времени, который нанесет дополнительную атаку. 
+                Если вы атаковали в дальнем бою, страж нанесет атаку в ближнем, и наоборот. Страж наносит атаку и исчезает из таймлайна. Шанс зависит от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <hr class="animated-gradient">
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Стазис</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/timeshield.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Щит времени</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенно (0% хода)</span><br>
+                Создает щит времени вокруг вас на несколько ходов, который переводит весь получаемый урон вперед во времени. Когда максимум урона поглощен, 
+                щит рассыпается, и полученный урон наносится вам с течением нескольких ходов. Каждый ход, пока наносится урон, вы излечиваетесь на 10% от общего его значения. 
+                Пока вы находитесь под эффектом щита времени, любой новый негативный эффект действует значительно меньше. Длительность и эффекты зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/stop.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="fire-gradient-text">Остановка</span> <br> <span style="font-size: 16px;" class="mythical-gradient-text">Активный мифический навык</span><br>
+                <span style="font-size: 16px;">Скорость применения: заклинание (100% хода, если нет эффектов, влияющих на скорость применения заклинаний)</span><br>
+                Нанесите темпоральный урон в радиусе вокруг цели и оглушите всех на несколько ходов. Урон и длительность оглушения зависят от 
+                <span class="magic-gradient-text">силы заклинаний</span>.
             </div>
         </div>
     </div>
