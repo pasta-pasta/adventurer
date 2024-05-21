@@ -579,6 +579,16 @@
             Таким образом, в первый ход вы накапливаете 200 энергии, затем 400, затем 600, затем 800. На этом этапе вы используете 800 для вашего первого заклинания, 
             используя вашу запасную энергию, и затем вы получаете ваше второе заклинание. 
             <br><br>
+            <span class="magic-gradient-text">Скорость атак, заклинаний и лучи</span><br><br>
+            Многие заклинания или атаки дальнобойным оружием создают снаряды, или проджектайлы. Стандартная скорость снарядов - 10 тайлов\ход, при этом они 
+            проходят первое расстояние в ход, когда были созданы. Скорость снарядов может быть увеличена или уменьшена различными талантами и предметами, а также статистикой 
+            глобальной скорости. В случае <span class="gradient-text">Приключенца</span>, все созданные им снаряды передвигаются с максимальной возможной в движке скоростью (
+                в случае кроссоверных боев - с максимальной скоростью, допустимой ОУ
+            ). 
+            Также, существуют заклинания, которые мгновенно достигают цели, и не могут быть уклонены или заблокированы. Это все заклинания, сразу 
+            применяющие на цель какой-либо эффект - они не перемещаются в пространстве и не имеют скорости. А также это любого рода лучи. 
+            Луч - это вид атаки, которая наносится вдоль всей линии одновременно. Можно сказать, что луч не двигается, а создается сразу по всей длинне. 
+            <br><br>
             <span class="magic-gradient-text">Ходы, скорость и манипуляция временем</span><br><br>
             Исходя из всей вышесказанной информации, очевидно, что любое получение дополнительных ходов, даже через способности, отсылающие на время, не является манипуляцией времени. По факту, 
             дополнительный ход - это просто дополнительное действие в рамках одного хода, а не дополнительное время. Время в игре <span class="fire-gradient-text">ToME</span> - это абстрактное понятие,
@@ -2563,6 +2573,267 @@
             предъявляемых к ним, хотя некоторые продиджи имеют особые предпосылки, которые могут быть сложны или невозможны для получения некоторыми персонажами.
             Все продиджи требуют не менее 50 очков в соответствующей стате. Если не указано иное, после изучения продиджи он всегда будет доступен для использования,
             даже если его требования больше не выполняются.
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: сила</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/giantleap.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Гигантский прыжок</span> <br> <span style="font-size: 16px;">Активный продиджи</span><br>
+                <span style="font-size: 16px;">Скорость применения: стандарт (100% хода, если не указано обратного) </span><br>
+                Вы прыгаете на любую клетку в широком радиусе, перемещаясь туда за один ход. Вы наносите урон всем целям в радиусе приземления, зависящий от урона оружия, 
+                а также накладываете ошеломление на несколько ходов. В момент прыжка вы полностью освобождаетесь от любых эффектов контроля. 
+                Урон и длительность ошеломления зависят от <span class="fire-gradient-text">силы</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/icancarrytherowld.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Я могу поднять мир!</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Усталость всегда равна 0% (позволяет применять способности без любых штрафов на ресурсы вне зависимости от условий), 
+                переносимый вес увеличен на 500, сила увеличена на 50%, вы получаете +1 категорию размера (без изменения модели).
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/irresistablesun.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Неудержимое Солнце</span> <br> <span style="font-size: 16px;">Активный продиджи</span><br>
+                <span style="font-size: 16px;">Скорость применения: стандарт (100% хода, если не указано обратного) </span><br>
+                Вы сияете, словно самая яркая звезда. Враги в большом радиусе притягиваются к вам со скоростью в несколько тайлов\ход (игнорируя их перемещение), 
+                получают урон огнем, светом и физический, а также имеют конечное снижение наносимого ими урона на 30%. Чем ближе враги к вам, тем больше урона они получают.
+                Урон и снижение урона зависят от <span class="fire-gradient-text">силы</span>, а радиус и длительность - от <span class="fire-gradient-text">магии</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/painenhancementsystem.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Система улучшения боли</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Каждый раз, когда вы наносите критический удар, все ваши атрибуты (кроме <span class="fire-gradient-text">силы</span>) увеличиваются 
+                на 50% от вашей <span class="fire-gradient-text">силы</span> на несколько ходов. 
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/superpower.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Суперсила</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Увеличивает <span class="celestial-gradient-text">силу разума</span> на 60% от вашей <span class="fire-gradient-text">силы</span>, 
+                а также дает 40% увеличения урона всего оружия от вашей <span class="fire-gradient-text">воли</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/youshallbemyweapon.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Ты Будешь Моим Орудием!</span> <br> <span style="font-size: 16px;">Активный продиджи</span><br>
+                <span style="font-size: 16px;">Скорость применения: оружие (100% хода, если не указано обратного) </span><br>
+                Нанесите мощный удар в широком радиусе, который откидывает всех врагов на несколько клеток и также оглушает на несколько ходов. 
+                Увеличивает урон оружия на 80% за каждую категорию размера свыше среднего. Урон и длительность оглушения зависят от <span class="fire-gradient-text">силы</span>.
+            </div>
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: ловкость</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/automatedreflexsystem.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Система авторефлексов</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Каждый раз, когда любой снаряд вот-вот вас ударит, вы получаете дополнительный ход.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/swifthands.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Быстрые руки</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Смена экипировки не тратит хода.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/throughthecrowd.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Через толпу</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Вы можете меняться местами с дружественным существом за 1\10 хода. Вы никогда не наносите урона дружественным существам, разве что 
+                сами того пожелаете. Вы получаете бонус ко всем спас-броскам и глобальной скорости за каждое дружественное существо, которое вы можете воспринять. 
+                Все дружественные существа также получают эффект этого продиджи. Бонусы зависят от <span class="fire-gradient-text">ловкости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/windtouchedspeed.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Скорость ветра</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Получите бонус к глобальной скорости. Вы не задеваете ловушки, реагирующие на давление. Бонус зависит от <span class="fire-gradient-text">ловкости</span>.
+            </div>
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: телосложение</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/corruptedshell.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Проклятая оболочка</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Получите большой бонус к <span class="life-gradient-text">жизни</span>, защите, броне и всем спас-броскам, зависящий от вашего
+                <span class="fire-gradient-text">телосложения</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/draconicbody.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Драконье тело</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Когда вы получаете урон, который снижает ваше здоровье ниже 30%, вы восстанавливаете 40% здоровья. 
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/neverstoprunning.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Никогда не прекращу бежать</span> <br> <span style="font-size: 16px;">Поддерживаемый продиджи</span><br>
+                Ваше движение теперь не тратит ход, но тратит выносливость.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/spineoftherowld.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Хребет Мироздания</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Когда вы получаете негативный эффект, вы становитесь неуязвимы для негативных эффектов на несколько ходов (но не для эффекта, который вызвал срабатывание). 
+                Длительность зависит от вашего <span class="fire-gradient-text">телосложения</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/suconmetalisation.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Внутренняя металлизация</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Когда ваше здоровье падает ниже 50%, вы получаете плоское уменьшение урона в размере 100% от вашего <span class="fire-gradient-text">телосложения</span> на несколько ходов.
+            </div>
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: магия</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/aetherpermation.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Эфирная трансформация</span> <br> <span style="font-size: 16px;">Поддерживаемый продиджи</span><br>
+                Пока активен, дает большой бонус к <span class="magic-gradient-text">силе заклинаний</span>. Также, если вас настигает любое развеивание 
+                (любая попытка развеять положительный эффект на вас), эта попытка становится неудачной, а вы получаете иммунитет к развеиваниям на несколько ходов.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/arcanemight.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Тайное могущество</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Ваше оружие теперь также использует 50% от вашей <span class="magic-gradient-text">силы заклинаний</span> в качестве урона. Увеличивает 
+                <span class="fire-gradient-text">физическую мощь</span> на 100% от вашей <span class="magic-gradient-text">силы заклинаний</span>, а физический шанс критического
+                удара - на 100% от магического шанса критического удара.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/blightedsummoning.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Осознанный призыв</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Ваши призывы получают дополнительные очки талантов и <span class="magic-gradient-text">силу заклинаний</span> в зависимости от вашей 
+                <span class="fire-gradient-text">магии</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/etherealform.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Эфирная форма</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Получите 25% к конечному уменьшению получаемого урона и к пробитию всех сопротивлений. Также получите 70% от вашей 
+                <span class="fire-gradient-text">магии</span> в качестве защиты. 
+            </div>
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: воля</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/hiddenresources.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Скрытые ресурсы</span> <br> <span style="font-size: 16px;">Активный продиджи</span><br>
+                <span style="font-size: 16px;">Скорость применения: мгновенная (0% хода) </span><br>
+                Все таланты используют 0% ресурсов на несколько ходов, а также вы не можете стать жертвой магической ошибки (все таланты срабатывают 
+                вне зависимости от эффектов, пытающихся прервать срабатывание талантов). Длительность зависит от вашей <span class="fire-gradient-text">воли</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/mentaltyranny.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Ментальная тирания</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Превращает 33% всего наносимого урона в урон разумом. Значительно увеличивает пробитие сопротивления разуму и увеличивает весь 
+                наносимый урон разумом. Бонусы зависят от вашей <span class="fire-gradient-text">воли</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/meteoriccrash.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Падение метеорита</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Каждый раз, когда вы применяете заклинание, на цель вызывается падение метеорита. Метеорит наносит поровну урона огнем и физического, 
+                а также оглушает цель на три хода. Превращает зону широким радиусом вокруг цели в лаву на несколько ходов. Продиджи пассивно 
+                ставит ваш бонус к урону от огня и пробитие сопротивляемости к огню равным самым высоким таковым бонусам других элементов. 
+                Урон и длительность оглушения зависят от вашей <span class="fire-gradient-text">воли</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/spellfatigue.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Отдача заклинаний</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Когда вам наносят любой урон, не являющийся физическим, вы возвращаете процент его обратно атакующему. Также атакующий получает шанс 
+                совершить ошибку при применении любого таланта на несколько ходов. Процент возвращаемого урона и шанс ошибки зависят от вашей
+                <span class="fire-gradient-text">воли</span>.
+            </div>
+        </div>
+        <div class="content-text mythical-gradient-text" style="font-size: 28px;">Продиджи: хитрость</div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/adept.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Адепт</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Дает бонус к уровням всех талантов в зависимости от вашей <span class="fire-gradient-text">хитрости</span>.
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="content-image">
+                <img src="arts/icons/masterofdisasters.png" alt="Описание изображения" class="content-image">
+            </div>
+            <div class="content-text">
+                <span class="mythical-gradient-text">Мастер катастроф</span> <br> <span style="font-size: 16px;">Пассивный продиджи</span><br>
+                Наложение любого кросс-уровневого эффекта также накладывает остальные два. Вы получаете бонус к 
+                <span class="fire-gradient-text">физической мощи</span>, <span class="magic-gradient-text">силе заклинаний</span> и 
+                <span class="celestial-gradient-text">силе разума</span> в зависимости от вашей <span class="fire-gradient-text">хитрости</span>.
+            </div>
         </div>
     </div>
 </body>
