@@ -110,6 +110,32 @@ body, html {
     right: 10px;
 }
 
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background: #303030;
+    color: #c0c0c0;
+}
+.item-table th, .item-table td {
+    border: 1px solid #4a4a4a;
+    padding: 8px 12px;
+}
+.item-table th {
+    background: #404040;
+}
+.item-table tr:nth-child(even) {
+    background: #383838;
+}
+.item-table .highlight {
+    color: #a0a0ff;
+}
+.item-table .subheader {
+    background: #353535;
+}
+
 .gradient-text {
     background: linear-gradient(90deg, #ff7e5f 0%, #cd0ff3 100%);
     background-size: 200% 200%;
